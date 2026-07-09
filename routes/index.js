@@ -18,6 +18,9 @@ const ReportRoutes = require("./admin/reports/reportRotues");
 
 
 module.exports = (app) => {
+    app.use("/", (req, res) => {
+        return res.send("Welcome to Sales Management System API's");
+    });
     app.use("/api/v1/auth", AuthRoutes);
     app.use("/api/v1/users", UserRoutes);
     app.use("/api/v1/status", StatusRoutes);

@@ -52,7 +52,7 @@ const createStatus = async (req, res, next) => {
 const getStatus = async (req, res, next) => {
     try {
 
-        const getStatusInfo = await Status.find({});
+        const getStatusInfo = await Status.find({}).sort({ statusID: 1 });
 
         if (getStatusInfo || getStatusInfo.length > 0) {
             return res.status(200).json({
